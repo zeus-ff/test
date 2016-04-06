@@ -1067,7 +1067,7 @@ return {
 	"^(rem) (%d+)$",
     "^(addadmin) (.*)$", -- sudoers only
     "^(removeadmin) (.*)$", -- sudoers only
-	"[#!/ ](support)$",
+	"(support)$",
 	"^(support) (.*)$",
     "^(-support) (.*)$",
     "^(list) (.*)$",
