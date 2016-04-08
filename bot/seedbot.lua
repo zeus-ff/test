@@ -213,27 +213,42 @@ function create_config( )
   config = {
     enabled_plugins = {
 	"admin",
+	"admin1",
     "onservice",
+     "onservice1",
     "inrealm",
+    "inrealm1",
     "ingroup",
+    "ingroup1",
     "inpm",
+    "inpm1",
     "banhammer",
+    "banhammer1",
     "stats",
-    "anti_spam",
+    "stats1",
     "owners",
-    "arabic_lock",
+    "owners1",
     "set",
+    "set1",
     "get",
-    "broadcast",
+    "get1",
     "invite",
+    "invite1",
+    "supergroup",
+    "supergroup1",
+    "whitelist",
+    "whitelist1",
+    "filter",
+    "filter1",
+    "anti_spam",
+    "arabic_lock",
+    "broadcast",
     "all",
     "plugins",
     "leave_ban",
-	"supergroup",
-	"whitelist",
 	"msg_checks"
     },
-    sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {184405202,146661928},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[Fox v5  😊
 👥 Sudos: 
@@ -448,7 +463,13 @@ Returns group logs
 !banlist
 will return group ban list
 
-**You can use "#", "!", or "/" to begin all commands
+!tophoto
+convert sticker to photo
+
+!tosticker [by reply only]
+convert photo to sticker
+
+**You can use "#", "!", , "/"Or asymptomatic with small initials  to begin all commands
 
 
 *Only owner and mods can add bots in group
@@ -575,13 +596,17 @@ Returns list of muted users in chat
 !filter [word]
 Filtering the [word]
 
-remfilter [word]
+!remfilter [word]
 Remove of the filter
+
+!filters
+Returns list of filter word  in chat
+
 !banlist
 Returns SuperGroup ban list
 
 !clean [rules|about|modlist|mutelist|filters]
-
+Clears rules, about, modlist, mutelist or filters
 !del
 Deletes a message by reply
 
@@ -590,13 +615,18 @@ Set chat visibility in pm !chats or !chatlist commands
 
 !res [username]
 Returns users name and id by username
+!tophoto
+convert sticker to photo
+
+!tosticker [by reply only]
+convert photo to sticker
 
 
 !log
 Returns group logs
 *Search for kick reasons using [#RTL|#spam|#lockmember]
 
-**You can use "#", "!", or "/" to begin all commands
+**You can use "#", "!", , "/"Or asymptomatic with small initials  to begin all commands
 
 *Only owner can add members to SuperGroup
 (use invite link to invite)
