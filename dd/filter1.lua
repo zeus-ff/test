@@ -1,4 +1,4 @@
---[[
+﻿--[[
 
 #
 #     @GPMOD
@@ -106,13 +106,14 @@ end
 
 return {
   patterns = {
-  "^([!/])(remfilter) (.*)$",
-  "^([!/])(filter) (.*)$",
-   "^([!/])(remword) (.*)$",
-    "^([!/])(filters)$",
-    "^([!/])(clearfilters)$",
+  "^ (remfilter) (.*)$",
+  "^ (filter) (.*)$",
+   "^ (remword) (.*)$",
+    "^ (filters)$",
+    "^ (clearfilters)$",
 "^(.+)$",
 	   
   },
   run = run
 }
+
