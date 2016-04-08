@@ -1,15 +1,13 @@
-﻿--[[
-
+--[[
 #
 #     @GPMOD
 #   @Dragon_Born
 #      
-
 ]]
 local function filter(msg, name)
     local hash = 'chat:'..msg.to.id..':filter'
     redis:hset(hash, name, 'newword')
-    return "کلمه جدید به فیلتر کلمات اضافه شد\n>"..name
+    return "A new word was added to the filter words"..name
 end
 
 local function get_variables_hash(msg)
@@ -23,7 +21,7 @@ local function list_variablesbad(msg)
 
   if hash then
     local names = redis:hkeys(hash)
-    local text = 'لیست کلمات غیرمجاز :\n\n'
+    local text = 'filters list\n\n'
     for i=1, #names do
       text = text..'> '..names[i]..'\n'
     end
@@ -37,7 +35,7 @@ function clear_commandbad(msg, var_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:del(hash, var_name)
-  return 'پاک شدند'
+  return 'Were cleared '
 end
 
 local function list_variables2(msg, value)
@@ -75,7 +73,7 @@ function clear_commandsbad(msg, cmd_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:hdel(hash, cmd_name)
-  return ''..cmd_name..'  پاک شد'
+  return ''..cmd_name..'Cleared '
 end
 
 local function run(msg, matches)
@@ -106,11 +104,11 @@ end
 
 return {
   patterns = {
-  "^ (remfilter) (.*)$",
-  "^ (filter) (.*)$",
-   "^ (remword) (.*)$",
-    "^ (filters)$",
-    "^ (clearfilters)$",
+  "^remfilter (.*)$",
+  "^filter (.*)$",
+   "^remword (.*)$",
+    "^filters$",
+    "^clearfilters$",
 "^(.+)$",
 	   
   },
